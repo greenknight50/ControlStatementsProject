@@ -1,39 +1,55 @@
 package com.control.statements;
+
 public class IfControlMain {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		int arr[] = {82,83,12,92,72};
-		int arr1[] = new int[6];
-		int[] arr3 = getArray();
-		
-		System.out.println("arr1[4]: " +arr1[4]);
-		System.out.println("arr[2]: " + arr[2]);
-		System.out.println("arr length: " +arr.length);
-		System.out.println("arr1 length: " +arr1.length);
-		System.out.println("arr3 length: " +arr3.length);
-		
-		for (int i=0; i<arr.length; i++) {
-			System.out.println("arr["+i+"]: "+arr[i]);
+
+		int[][][] marks = new int[3][3][3];
+		System.out.println("marks length: " + marks.length);
+		System.out.println("Element at marks[0][0][0]: " + marks[0][0][0]);
+		marks[0][0][0] = 11;
+		marks[0][0][1] = 12;
+		marks[0][0][2] = 13;
+		marks[0][1][0] = 14;
+		marks[0][1][1] = 15;
+		marks[0][1][2] = 16;
+		marks[0][2][0] = 17;
+		marks[0][2][1] = 18;
+		marks[0][2][2] = 19;
+
+		marks[1][0][0] = 21;
+		marks[1][0][1] = 22;
+		marks[1][0][2] = 23;
+		marks[1][1][0] = 24;
+		marks[1][1][1] = 25;
+		marks[1][1][2] = 26;
+		marks[1][2][0] = 27;
+		marks[1][2][1] = 28;
+		marks[1][2][2] = 29;
+
+		marks[2][0][0] = 31;
+		marks[2][0][1] = 32;
+		marks[2][0][2] = 33;
+		marks[2][1][0] = 34;
+		marks[2][1][1] = 35;
+		marks[2][1][2] = 36;
+		marks[2][2][0] = 37;
+		marks[2][2][1] = 38;
+		marks[2][2][2] = 39;
+
+		for (int i = 0; i < marks.length; i++) {
+			for (int j = 0; j < marks[i].length; j++) {
+				for (int k = 0; k < marks[i][j].length; k++) {
+					System.out.println("marks[" + i + "][" + j + "][" + k + "]: " + marks[i][j][k]);
+				}
+				System.out.println();
+			}
+			System.out.println("End of upper most loop.\n");
 		}
-		
-		System.out.println("Array elements using for-each loop");
-		//int i;
-		for (int i : arr) {
-			System.out.println("arr["+i+"]: "+i);
-		}
-		
-	}
-	
-	
-	public static int[] getArray() {
-		
-		//database access
-		int arr[] = {23, 56, 73};
-		return arr ;
+
 	}
 
 }
