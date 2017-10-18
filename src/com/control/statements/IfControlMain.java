@@ -7,7 +7,10 @@ public class IfControlMain {
 	 */
 	public static void main(String[] args) {
 		
-		String str = new String("Hello World!");
+		ExceptionHandlingMain obj = new ExceptionHandlingMain();
+	
+		
+		String helloWorldString = new String("Hello World!");
 		String str3 = new String("Hello World!");
 		//str = "Hello World!";
 		
@@ -15,7 +18,7 @@ public class IfControlMain {
 		str1 = "First string program";
 		str1 = "asdfa";
 		
-		System.out.println("str after replacing: " + str.replace("Hello", "Good"));
+		System.out.println("str after replacing: " + helloWorldString.replace("Hello", "Good"));
 		
 		StringBuffer strBuffer = new StringBuffer("Hello string buffer");
 		StringBuilder strBuilder = new StringBuilder("Hello string builder");
@@ -33,7 +36,7 @@ public class IfControlMain {
 		
 		
 		System.out.println("Above if");
-		if (str.equalsIgnoreCase(str3)) {
+		if (helloWorldString.equalsIgnoreCase(str3)) {
 			System.out.println("str is equal to str3");
 		} else {
 			System.out.println("strings are not equal");
@@ -42,8 +45,8 @@ public class IfControlMain {
 		System.out.println("ch.compareTo(ch1): " + ch.compareTo(ch1));
 		
 		System.out.println("str1 == str2 result: " + (str1 == str2));
-		System.out.println("str == str1 result: " + (str == str1) + ", str.equals(str1) result: " + (str.equalsIgnoreCase(str1)));
-		System.out.println("str == str3 result: " + (str == str3));
+		System.out.println("str == str1 result: " + (helloWorldString == str1) + ", str.equals(str1) result: " + (helloWorldString.equalsIgnoreCase(str1)));
+		System.out.println("str == str3 result: " + (helloWorldString == str3));
 		
 		
 	}
