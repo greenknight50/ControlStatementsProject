@@ -2,36 +2,46 @@ package com.control.statements;
 
 import java.util.Scanner;
 
+class DemoException extends Exception {
+
+	public DemoException() {
+		super();
+	}
+
+	public DemoException(String message) {
+		super(message);
+	}
+
+	public DemoException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+}
+
 public class ExceptionHandlingMain {
 
 	public static void main(String[] args) {
-		Scanner scanner;
-		scanner = new Scanner(System.in);
-		int x, y, z = 0;
-		ExceptionHandlingMain obj = new ExceptionHandlingMain();
-		System.out.println("Inside Main method");
+
 		try {
-			Class cls = Class.forName("com.control.statements.ExceptionHandlingMain");
-			ExceptionHandlingMain obj1 = (ExceptionHandlingMain) cls.newInstance();
-			System.out.println("obj1: " + obj1);
+			int x, y, z = 0;
+			Scanner scanner = new Scanner(System.in);
 			System.out.println("Please enter x value: ");
 			x = scanner.nextInt();
 			System.out.println("Please enter y value: ");
 			y = scanner.nextInt();
+			if (x == y) {
+				throw new DemoException();
+			} else if (x < y) {
+				throw new DemoException(x + " is less than " + y + ". Be careful");
+			}
 			z = x / y;
-			
-		} catch (ClassNotFoundException | ArithmeticException ex) {
-			System.out.println("Common catch block");
-			z = 35;
-			System.out.println("Class exception: " + ex.getMessage());
-		} catch (Exception e) {
-			z = 20;
-			e.printStackTrace();
-		} finally {
-			scanner.close();
-			System.out.println("This will be executed all time unless system crashes");
+		} catch (DemoException ex) {
+			System.out.println("Message is: " + ex.getMessage());
+			ex.printStackTrace();
+		} catch (ArithmeticException ex) {
+			System.out.println("Message is: " + ex.getMessage());
+			ex.printStackTrace();
 		}
-		System.out.println("Z value: " + z);
 
 	}
 
