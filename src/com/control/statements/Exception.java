@@ -1,21 +1,15 @@
 class Exception {
   public static void main(String[] args) {
  
-  int a, b, result;
+  String languages[] = { "C", "C++", "Java", "Perl", "Python" };
  
-  java.util.Scanner input = new java.util.Scanner(System.in);
-  System.out.println("Input two integers");
- 
-  a = input.nextInt();
-  b = input.nextInt();
-
   try {
-    result  = a / b;
-    System.out.println("Result = " + result);
+    for (int c = 1; c <= 5; c++) {
+      System.out.println(languages[c]);
+    }
   }
- 
-  catch (ArithmeticException e) {
-    System.out.println("Exception caught: Division by zero.");
+  catch (Exception e) {
+    System.out.println(e);
   }
   }
 }
