@@ -1,24 +1,48 @@
 package com.control.statements;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Scanner;
 
+class DemoException extends Exception {
 
-class DemoException {
-	
-	void displaySomething() throws IOException {
-		System.out.println(5/0);
+	public DemoException() {
+		super();
 	}
+
+	public DemoException(String message) {
+		super(message);
+	}
+
+	public DemoException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
 }
 
-public class ExceptionHandlingMain extends DemoException {
+public class ExceptionHandlingMain {
 
-	public static void main(String[] args) {}
-	
-	@Override
-	void displaySomething() throws FileNotFoundException {
-		
+	public static void main(String[] args) {
+
+		try {
+			int x, y, z = 0;
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Please enter x value: ");
+			x = scanner.nextInt();
+			System.out.println("Please enter y value: ");
+			y = scanner.nextInt();
+			if (x == y) {
+				throw new DemoException();
+			} else if (x < y) {
+				throw new DemoException(x + " is less than " + y + ". Be careful");
+			}
+			z = x / y;
+		} catch (DemoException ex) {
+			System.out.println("Message is: " + ex.getMessage());
+			ex.printStackTrace();
+		} catch (ArithmeticException ex) {
+			System.out.println("Message is: " + ex.getMessage());
+			ex.printStackTrace();
+		}
+
 	}
 
 }
