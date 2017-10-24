@@ -10,7 +10,7 @@ public class Arraylist {
 	  obj.add("bell");
 	  obj.add("Oakely");
 	  obj.add("Claremont");
-
+          System.out.println("Size Of ArrayList = "+obj.size());
 	  System.out.println("Array list has following elements:"+obj);
           System.out.println(obj.indexOf("bell"));
           System.out.println(obj.get(4));
