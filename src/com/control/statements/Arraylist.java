@@ -14,6 +14,7 @@ public class Arraylist {
 	  System.out.println("Array list has following elements:"+obj);
           System.out.println(obj.indexOf("bell"));
           System.out.println(obj.get(4));
+          List<String> subList = obj.subList(1, 4);
 
 	  obj.add(0, "Rosemont");
 	  obj.add(1, "Thome");
@@ -28,3 +29,5 @@ public class Arraylist {
 	  System.out.println("Current array list is:"+obj);
    }
 }
+
+
