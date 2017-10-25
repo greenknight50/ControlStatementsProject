@@ -1,16 +1,31 @@
-public class ThrowExample {
-   static void checkEligibilty(int stuage, int stuweight){ 
-      if(stuage<12 && stuweight<40) {
-         throw new ArithmeticException("Student is not eligible for registration"); 
-      }
-      else {
-         System.out.println("Student Entry is Valid!!"); 
-      }
-   } 
+import java.util.*;
 
-   public static void main(String args[]){ 
-     System.out.println("Welcome to the Registration process!!");
-     checkEligibilty(10, 39); 
-     System.out.println("Have a nice day.."); 
- } 
+public class DailyTask {
+
+   public static void main(String args[]) {
+      
+      Vector<String> vec = new Vector<String>();
+
+      vec.addElement("Highland");
+      vec.addElement("Leavit");
+      vec.addElement("Bell");
+      vec.addElement("Oakley");
+
+      System.out.println("Size is: "+vec.size());
+      System.out.println("Default capacity increment is: "+vec.capacity());
+
+      vec.addElement("Street1");
+      vec.addElement("Street2");
+      vec.addElement("Street3");
+
+      
+      System.out.println("Size after addition: "+vec.size());
+      System.out.println("Capacity after increment is: "+vec.capacity());
+
+      
+      Enumeration en = vec.elements();
+      System.out.println("\nElements are:");
+      while(en.hasMoreElements())
+         System.out.print(en.nextElement() + " ");
+   }
 }
