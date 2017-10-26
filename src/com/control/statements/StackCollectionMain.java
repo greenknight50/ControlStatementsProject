@@ -11,13 +11,13 @@ public class StackCollectionMain {
 		Vector<Integer> vector = new Vector<Integer>(20);
 		int capacity = vector.capacity();
 		System.out.println("Vector capacity: " + capacity);
-		for (int i = 0; i <= capacity + 1; i++) {
+		for (int i = 0; i < capacity + 1; i++) {
 			vector.addElement(i);
 		}
 		capacity = vector.capacity();
 		System.out.println("Vector length: "+ vector.size() + ", Vector capacity after adding element: " + capacity);
 		
-		for (int i = vector.size(); i <= capacity + 1; i++) {
+		for (int i = vector.size(); i < capacity + 1; i++) {
 			vector.addElement(i);
 		}
 		capacity = vector.capacity();
