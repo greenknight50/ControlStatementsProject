@@ -1,22 +1,18 @@
 import java.util.*;
-public class HashSDemo {
+public class HashMapDemo {
 
    public static void main(String args[]) {
-     LinkedHashSet hash = new LinkedHashSet();
-      hash.add("Bell");
-      hash.add("Leavit");
-      hash.add("Oakley");
-      hash.add("devon");
-      hash.add("Thome");
-      hash.add("Granville");
-      System.out.println(hash);
-
-	LinkedHashSet<Integer> hash1 = new LinkedHashSet<Interger>();
-	hash1.add(000);
-	hash1.add(111);
-	hash1.add(222);
-	hash1.add(333);
-	hash1.add(444);
-	system.out.println(hash1);
-   }
+	 LinkedHashMap<Integer, String> hashmap = new LinkedHashMap<Integer, String>();
+         hashmap.put(111, "Abey");
+         hashmap.put(222, "Dawn");
+         hashmap.put(333, "Sherry");
+         hashmap.put(444, "Karon");
+         hashmap.put(555, "Jim");
+	Set set = hashmap.entrySet();
+	Iterator iterator = set.iterator();
+         while(iterator.hasNext()) {
+            Map.Entry me = (Map.Entry)iterator.next();
+            System.out.print("Key is: "+ me.getKey() + "& Value is: "+me.getValue()+"\n");
+         }
+     }
 }
