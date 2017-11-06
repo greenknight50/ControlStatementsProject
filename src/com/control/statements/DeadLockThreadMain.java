@@ -5,7 +5,7 @@ public class DeadLockThreadMain {
 	public static void main(String[] args) throws InterruptedException {
 		String resourceData = "Important text";
 		String secondResource = "Very important text";
-		
+
 		Thread thread1 = new Thread() {
 			public void run() {
 				synchronized (resourceData) {
@@ -15,14 +15,14 @@ public class DeadLockThreadMain {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					
+
 					synchronized (secondResource) {
 						System.out.println("Thread name: " + this.getName() + ", Locked secondResource");
 					}
 				}
 			}
 		};
-		
+
 		Thread thread2 = new Thread() {
 			public void run() {
 				synchronized (secondResource) {
@@ -32,14 +32,14 @@ public class DeadLockThreadMain {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					
+
 					synchronized (resourceData) {
 						System.out.println("Thread name: " + this.getName() + ", Locked resourceData");
 					}
 				}
 			}
 		};
-		
+
 		thread1.setName("FirstThread");
 		thread2.setName("SecondThread");
 		thread1.start();
