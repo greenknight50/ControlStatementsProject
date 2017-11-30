@@ -1,4 +1,4 @@
-package com.control.statements;
+package com.java.control.statements;
 
 public class IfControlMain {
 

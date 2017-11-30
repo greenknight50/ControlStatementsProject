@@ -1,4 +1,4 @@
-package com.control.statements;
+package com.java.control.statements;
 
 public class ExceptionChaining {
 	public void myMethod1() throws SomeException1 {  //RESTful request mapping
