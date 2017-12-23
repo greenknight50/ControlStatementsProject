@@ -6,24 +6,24 @@ package com.java.control.statements;
  * Some more copyrights lines here
  * @author ashraf
  * 
- * Program to print prime numbers. 
+ * Print number from 1 t0 50. For numbers divisible by 3 print "Fizz", for numbers divisible by 5 print "Buzz"
+ * and for numbers divisible by both 3 and 5 print "FizzBuzz".
  *
  */
 public class HelloMain {
 	
 	public static void main(String[] args) {
-
-		System.out.println("1\n2");
-		for (int i = 3; i <= 100; i++) {
-			boolean isPrime = true;
-			for (int j = 2; j < i; j++) {
-				if (i%j == 0) {
-					isPrime = false;
-					break;
-				}
-			}
-			if (isPrime)
+		
+		for (int i = 1; i <= 50; i++) {
+			if(i%3==0 && i%5==0) {
+				System.out.println("FizzBuzz");
+			} else if(i%3==0) {
+				System.out.println("Fizz");
+			} else if (i%5==0) {
+				System.out.println("Buzz");
+			} else {
 				System.out.println(i);
+			}
 		}
 	}
 
